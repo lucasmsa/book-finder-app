@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { lighten } from 'polished'
+import { lighten, shade, tint } from 'polished'
 
 export const Container = styled.div`
   margin-top: 200px;
@@ -45,9 +45,10 @@ export const Books = styled.div`
   }
 
   @media only screen and (max-width: 920px) {
-    height: 100px; 
-    width: 100px;
-    transform: translateY(350px) translateX(-100px);
+    height: 50px; 
+    width: 50px;
+    transform: translateY(390px) translateX(-120px);
+    text-align: center;
   }
 `
 
@@ -80,7 +81,24 @@ export const Input = styled.div`
     transition: color 0.2s;
 
     &:hover {
-      color: ${lighten(0.3, '#1D0632')}
+      color: ${tint(0.2, '#562085')}
     }
   }
+`
+
+export const Icons = styled.div`
+  margin-left: 160px;
+  width: 200px;
+  margin-top: 20px;
+    svg {
+      color: #fff;
+      transition: color 0.2s;
+      &:hover {
+        color: ${tint(0.2, '#562085')}
+      }
+
+      & + a {
+        margin-left: 10px;
+      }
+    }
 `
