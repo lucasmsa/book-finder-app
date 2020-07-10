@@ -8,31 +8,43 @@ import api from '../../services/api'
 import BooksComponent from '../../components/Books'
 
 
+interface BookData {
+  volumeInfo: {
+    title: string;
+    categories?: string[];
+    publisher?: string;
+    authors: string[];
+    description: string;
+    imageLinks?: {
+      thumbnail: string;
+    }
+    publishedDate: string;
+  }
+}
+
 const Home: React.FC = () => {
 
   const [searchInput, setSearchInput] = useState('')
-  const [newSearch, setNewSearch] = useState(false)
-  const [booksFound, setBooksFound] = useState([])
+  const [booksFound, setBooksFound] = useState<BookData[]>([])
 
   const getBooks = useCallback(async () => {
     try {
       const res = await api.get(`${searchInput}`)
-      
       setBooksFound(res.data.items)
-      
-      
+
     } catch (err) { 
+      setBooksFound([])
       console.log(err.message)
     }  
   }, [searchInput])
   
   const handleButtonClick = () => {
-    setNewSearch(!newSearch)
     getBooks()
   }
 
-  console.log(booksFound)
+
   return (
+      
       <Container>
         <h1>Book Finder <img src={Search} alt="Magnifying glass"/></h1>
         <p>Find world-class books with ease by searching for their author, title or publisher</p>
@@ -50,19 +62,32 @@ const Home: React.FC = () => {
             />
           </a>
         </Input>
-      <Icons>
-          <AiFillInfoCircle
-            size={35}
-        />
-          <a href='https://github.com/lucasmsa/book-finder-app'>
-            <AiFillGithub
-              size={35}    
-            />
-          </a>
+        <Icons>
+            <AiFillInfoCircle
+              size={35}
+          />
+            <a href='https://github.com/lucasmsa/book-finder-app'>
+              <AiFillGithub
+                size={35}    
+              />
+            </a>
         </Icons>
-        <Books>
-        {/* <img src={booksImg} alt="books"/> */}
-          <BooksComponent/>
+    <Books>
+        {booksFound?.length ? <div className='vl'/> : null}
+        {booksFound?.length
+          ? booksFound.map(book => {
+            // const { volumeInfo } = book;
+            // const { authors, title, publishedDate, imageLinks } = volumeInfo;
+            // const { thumbnail } = imageLinks;
+            return <BooksComponent 
+                      title={book.volumeInfo.title}
+                      authors={book.volumeInfo.authors}
+                      publishedDate={book.volumeInfo.publishedDate}
+                      thumbnail={book.volumeInfo.imageLinks?.thumbnail}
+                    />  
+                }
+          )
+          : <img src={booksImg} alt="books" />}
         </Books>
       </Container>
   ) 

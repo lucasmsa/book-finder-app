@@ -1,38 +1,41 @@
 import React from 'react';
+import isUndefined from '../../utils/isUndefined'
 import { BookCard } from './styles'
 
 interface BooksProps {
-  title?: string;
-  author?: string[];
+  title: string;
+  authors?: string[];
   publishedDate?: string;
   thumbnail?: string;
 }
 
 const BooksComponent: React.FC<BooksProps> = ({
   title,
-  author,
+  authors,
   publishedDate,
   thumbnail
-}: BooksProps)=> {
+}: BooksProps) => {
+
+  let titleDisplay = ''
+  if (!isUndefined(title)) {
+    titleDisplay = title
+  }
+
+  let authorDisplay = ''
+  if (authors?.length) {
+    authorDisplay = authors?.join('; ')
+  }
+
   return (
     <>
-    <BookCard>
-      <img src="http://books.google.com/books/content?id=y1UQQwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="book cover" />
+      <BookCard>
+        {thumbnail && <img src={thumbnail} alt="book cover" />}
         <h2><u>Title</u></h2>
-        <p>Meu pal no seu cu</p>
+        <p>{titleDisplay.length > 48 ? titleDisplay.substr(0, 50).concat('...') : titleDisplay}</p>
         <h2><u>Author</u></h2>
-        <p>Joao Pinto molhadinho</p>
+        <p>{authorDisplay.length > 48 ? authorDisplay.substr(0, 50).concat('...') : authorDisplay}</p>
         <h2><u>Published Date</u></h2>
-        <p>12/03/2020</p>
-    </BookCard>
-    <BookCard>
-      <img src="http://books.google.com/books/content?id=y1UQQwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="book cover" />
-        <h2><u>Title</u></h2>
-        <p>Meu pal no seu cu</p>
-        <h2><u>Author</u></h2>
-        <p>Joao Pinto molhadinho</p>
-        <h2><u>Published Date</u></h2>
-        <p>12/03/2020</p>
+        <p>{publishedDate}</p>
     </BookCard>
     </>
   )

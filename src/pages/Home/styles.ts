@@ -1,9 +1,8 @@
-import { BookCard } from './../../components/Books/styles';
 import styled from 'styled-components'
 import { tint } from 'polished'
 
 export const Container = styled.div`
-  margin-top: 150px;
+  margin-top: 100px;
   min-width: 540px;
 
   h1 {
@@ -38,23 +37,48 @@ export const Books = styled.div`
   align-items: center;
   position: relative;
 
+  .vl {
+    position: absolute;
+    transform: translateX(80px) translateY(-350px);
+    border-left: 3px solid white;
+    border-radius: 20px;
+    height: 100%;
+    margin-bottom: 20px;
+    box-shadow: 5px 4px 5px 5px #18062C;
+
+    @media only screen and (max-width: 940px) {
+      visibility: hidden;
+    }
+  }
+
   img {
     height: 200px;
     width: 200px;
     margin-left: 600px;
     transform: translateY(-250px);
   }
+  
 
   @media only screen and (max-width: 940px) {
+    
     height: 50px; 
     width: 50px;
     margin-top: 150px;
-    transform: translateY(440px) translateX(-200px);
+    div {
+      position: relative;
+      &:nth-child(2) {
+        margin-top: 6200px;
+      }
+      transform: translateY(300px) translateX(-130px);
+    }
+    
     text-align: center;
+
+    img {
+      transform: translateY(-10px) translateX(-120px);
+    }
   }
 `
-
-
 
 export const Input = styled.div`
 
@@ -94,15 +118,19 @@ export const Icons = styled.div`
   margin-left: 160px;
   width: 200px;
   margin-top: 20px;
-    svg {
-      color: #fff;
-      transition: color 0.2s;
-      &:hover {
-        color: ${tint(0.2, '#562085')}
-      }
-
-      & + a {
-        margin-left: 10px;
-      }
+  svg {
+    color: #fff;
+    transition: color 0.2s;
+    &:hover {
+      color: ${tint(0.2, '#562085')}
     }
+
+    & + a {
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 940px) {
+    margin-bottom: 200px;
+  }
 `

@@ -5,7 +5,11 @@ export const BookCard = styled.div`
   background: #4B148B;
   margin-top: 100px;
   margin-left: 650px;
+  min-height: 600px;
+
   max-width: 290px;
+  min-width: 290px;
+
   transform: translateY(-470px);
   padding: 0px 20px 60px 20px;
   border-radius: 10px;
@@ -26,6 +30,7 @@ export const BookCard = styled.div`
   }
 
   h2 {
+    margin-top: 10px;
     font-family: 'Josefin Slab', serif;
     font-weight: bold;
     color: white;
@@ -33,6 +38,8 @@ export const BookCard = styled.div`
 
   p {
     margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: white;
     margin-bottom: 35px;
     &:nth-child(7) {
