@@ -1,9 +1,10 @@
+import { BookCard } from './../../components/Books/styles';
 import styled from 'styled-components'
-import { lighten, shade, tint } from 'polished'
+import { tint } from 'polished'
 
 export const Container = styled.div`
-  margin-top: 200px;
-  
+  margin-top: 150px;
+  min-width: 540px;
 
   h1 {
     font-family: 'Roboto', sans-serif;
@@ -30,7 +31,7 @@ export const Container = styled.div`
 `
 export const Books = styled.div`
 
-  display: flex; 
+  display: flex;  
   flex: 1;
   flex-direction: column;
   place-content: center;
@@ -44,13 +45,16 @@ export const Books = styled.div`
     transform: translateY(-250px);
   }
 
-  @media only screen and (max-width: 920px) {
+  @media only screen and (max-width: 940px) {
     height: 50px; 
     width: 50px;
-    transform: translateY(390px) translateX(-120px);
+    margin-top: 150px;
+    transform: translateY(440px) translateX(-200px);
     text-align: center;
   }
 `
+
+
 
 export const Input = styled.div`
 

@@ -18,4 +18,8 @@ export default createGlobalStyle`
     margin: 20px auto;
     padding: 40px 10px;
   }
+
+  button {
+    cursor: pointer;
+  }
 `
