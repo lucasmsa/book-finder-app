@@ -8,13 +8,9 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body {
+  body {
     -webkit-font-smoothing: antialised;
     background: #320A5C;
-    overflow-x: hidden;
-  }
-
-  body {
     width: 100%;
     position: relative;
   }

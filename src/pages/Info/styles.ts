@@ -3,8 +3,12 @@ import { tint } from 'polished'
 
 export const Container = styled.div`
   margin-top: 100px;
-  min-width: 540px;
+  min-width: 414px;
   color: white;
+
+  @media only screen and (max-width: 493px) {
+      margin-top: 30px;
+  }
 
   a {
     
@@ -20,8 +24,7 @@ export const Container = styled.div`
     }
     &:hover {
       color: ${tint(0.2, '#FFDA69')}
-    }
-    
+    }  
   }
   
   
@@ -46,8 +49,13 @@ export const Container = styled.div`
     @media only screen and (max-width: 649px) {
       a:last-child {
         margin: 10px 15px;
-      }
-      
+      }  
     } 
+    @media only screen and (max-width: 493px) {
+      max-width: 350px;
+      font-size: 17.5px;
+      margin-top: 25px;
+      margin-right: 4px;
+    }
   }
 `

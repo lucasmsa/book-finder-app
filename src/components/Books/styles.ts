@@ -4,9 +4,13 @@ import { tint } from 'polished'
 export const BookCard = styled.div`
 
   transition: margin-right 0.5s;
+
+
   &:hover {
     margin-right: -20px;
   }
+
+ 
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   background: #4B148B;
@@ -25,6 +29,12 @@ export const BookCard = styled.div`
   align-content: center;
   margin-bottom: 10px;
 
+  @media only screen and (max-width: 493px) {
+    max-width: 240px;
+    max-height: 400px;
+    padding-bottom: 20px;
+  }
+
   @media only screen and (max-width: 940px) {
     transform: translateY(-200px);
     transform: translateX(60px);
@@ -36,6 +46,7 @@ export const BookCard = styled.div`
     margin: 0 20px 30px 20px;
     transform: translateY(0.01px);
     border: 1px solid white;
+
   }
 
   h2 {
@@ -45,6 +56,10 @@ export const BookCard = styled.div`
     font-size: 25px;
     font-weight: bold;
     color: white;
+
+    @media only screen and (max-width: 493px) {
+      font-size: 21.5px;
+    }
   }
 
   p {
@@ -58,9 +73,17 @@ export const BookCard = styled.div`
     &:last-child {
         margin-bottom: 10px;
     }
+
+    @media only screen and (max-width: 493px) {
+      font-size: 16px;
+    }
   }
   
   a {
+
+    @media only screen and (max-width: 493px) {
+      font-size: 17.5px;
+    }
     font-size: 20px;
     position: absolute;
     color: #E7BD3D;
