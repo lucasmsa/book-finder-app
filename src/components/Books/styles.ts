@@ -14,8 +14,8 @@ export const BookCard = styled.div`
   margin-left: 650px;
   min-height: 600px;
 
-  max-width: 290px;
-  min-width: 290px;
+  max-width: 300px;
+  min-width: 300px;
 
   transform: translateY(-470px);
   padding: 0px 20px 60px 20px;
@@ -31,6 +31,8 @@ export const BookCard = styled.div`
   }
   
   img {
+    max-height: 182px;
+    max-width: 128px;
     margin: 0 20px 30px 20px;
     transform: translateY(0.01px);
     border: 1px solid white;
@@ -38,7 +40,9 @@ export const BookCard = styled.div`
 
   h2 {
     margin-top: 10px;
+    margin-bottom: 8px;
     font-family: 'Josefin Slab', serif;
+    font-size: 25px;
     font-weight: bold;
     color: white;
   }

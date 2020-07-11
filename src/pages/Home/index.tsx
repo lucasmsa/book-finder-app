@@ -2,7 +2,9 @@ import React, { useState, useCallback } from 'react'
 import { Container, Books, Input, Icons } from './styles'
 import booksImg from '../../assets/bookshelf.svg'
 import Search from '../../assets/search.svg'
+import Loading from '../../assets/loading.gif'
 import { FiChevronRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import { AiFillGithub, AiFillInfoCircle } from 'react-icons/ai'
 import api from '../../services/api'
 import BooksComponent from '../../components/Books'
@@ -27,6 +29,7 @@ const Home: React.FC = () => {
 
   const [searchInput, setSearchInput] = useState('')
   const [booksFound, setBooksFound] = useState<BookData[]>([])
+  const [loading, setLoading] = useState(false)
 
   const getBooks = useCallback(async () => {
     try {
@@ -34,17 +37,27 @@ const Home: React.FC = () => {
 
       setTimeout(() => { 
           setBooksFound(res.data.items)
-      }, 1000)
+      }, 400)
+
+      if (!res.data.items) {
+        setLoading(false)
+      }
 
       console.log(res.data.items)
 
     } catch (err) { 
+      setLoading(false)
       setBooksFound([])
       console.log(err.message)
     }  
   }, [searchInput])
   
   const handleButtonClick = () => {
+
+    if (searchInput.length) setLoading(false);
+
+    setLoading(true)
+    setBooksFound([])
     getBooks()
   }
 
@@ -68,10 +81,12 @@ const Home: React.FC = () => {
             />
           </a>
         </Input>
-        <Icons>
+      <Icons>
+          <Link to='/info'>
             <AiFillInfoCircle
               size={35}
-          />
+            />
+          </Link>
             <a href='https://github.com/lucasmsa/book-finder-app'>
               <AiFillGithub
                 size={35}    
@@ -81,17 +96,19 @@ const Home: React.FC = () => {
       <Books numberOfCards={booksFound?.length}>
         {booksFound?.length ? <div className='vl'/> : null}
         {booksFound?.length
-        ? booksFound.map(book => {
-            return <BooksComponent 
+          ? booksFound.map(book => {
+            return (<BooksComponent 
                       title={book.volumeInfo.title}
                       authors={book.volumeInfo.authors}
                       publishedDate={book.volumeInfo.publishedDate}
                       thumbnail={book.volumeInfo.imageLinks?.thumbnail}
                       infoLink={book.volumeInfo.infoLink}
-                  /> 
+                  />
+                  
+            )
                }
           )
-          : <img src={booksImg} alt="books" />}
+          : loading ? <img src={ Loading } alt="loading" className='loading'/> : <img src={ booksImg } alt='books' className='books'/> }
         </Books>
       </Container>
   ) 

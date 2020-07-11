@@ -43,7 +43,7 @@ const BooksComponent: React.FC<BooksProps> = ({
             <p>{authorDisplay.length > 48 ? authorDisplay.substr(0, 50).concat('...') : authorDisplay}</p>
             {publishedDate && <h2><u>Published Date</u></h2>}
             <p>{publishedDate}</p>
-            {linkDisplay && <a href={linkDisplay}>More Info <FiChevronRight/></a>}
+            {linkDisplay && <a target="_blank" rel="noopener noreferrer" href={linkDisplay}>More Info <FiChevronRight/></a>}
         </BookCard>
   )
 }

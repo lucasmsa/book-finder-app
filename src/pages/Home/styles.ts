@@ -6,7 +6,6 @@ interface BookCardProps {
   numberOfCards: number
 }
 
-
 export const Container = styled.div`
   margin-top: 100px;
   min-width: 540px;
@@ -22,6 +21,14 @@ export const Container = styled.div`
       height: 50px;
       margin-left: 0px;
     }
+  }
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+    flex: 1;
   }
 
   p {
@@ -47,7 +54,7 @@ export const Icons = styled.div`
       color: ${tint(0.2, '#562085')}
     }
 
-    & + a {
+    & {
       margin-left: 10px;
     }
   }
@@ -80,11 +87,16 @@ export const Books = styled.div<BookCardProps>`
     }
   }
 
-  img {
+  .books {
     height: 200px;
     width: 200px;
     margin-left: 600px;
     transform: translateY(-250px);
+  }
+
+  .loading {
+    margin-left: 600px;
+    transform: translateY(-220px);
   }
 
   a {
@@ -107,7 +119,11 @@ export const Books = styled.div<BookCardProps>`
       transform: translateY(250px) translateX(-130px);
     }
 
-    img {
+    .books {
+      transform: translateY(-10px) translateX(-120px);
+    }
+
+    .loading {
       transform: translateY(-10px) translateX(-120px);
     }
   }
