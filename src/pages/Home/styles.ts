@@ -11,7 +11,7 @@ export const Container = styled.div`
   min-width: 414px;
 
 
-  @media only screen and (max-width: 493px) {
+  @media only screen and (max-width: 940px) {
       margin-top: 30px;
   }
 
@@ -168,7 +168,8 @@ export const Books = styled.div<BookCardProps>`
       transform: translateY(-10px) translateX(-120px);
 
       @media only screen and (max-width: 493px) {
-          height: 150px;
+          width: 250%;
+          height: 250%;
           margin-right: 60px;
       }
     }

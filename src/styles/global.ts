@@ -15,6 +15,11 @@ export default createGlobalStyle`
     position: relative;
   }
 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
   #root {
     max-width: 960px;
     margin: 20px auto;

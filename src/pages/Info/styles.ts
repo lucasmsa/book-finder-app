@@ -6,9 +6,10 @@ export const Container = styled.div`
   min-width: 414px;
   color: white;
 
-  @media only screen and (max-width: 493px) {
+  @media only screen and (max-width: 940px) {
       margin-top: 30px;
   }
+  
 
   a {
     
