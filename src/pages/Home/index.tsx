@@ -72,7 +72,7 @@ const Home: React.FC = () => {
               />
             </a>
         </Icons>
-    <Books>
+      <Books numberOfCards={booksFound?.length}>
         {booksFound?.length ? <div className='vl'/> : null}
         {booksFound?.length
           ? booksFound.map(book => {

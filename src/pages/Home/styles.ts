@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 import { tint } from 'polished'
 
+
+interface BookCardProps {
+  numberOfCards: number
+}
+
+
 export const Container = styled.div`
   margin-top: 100px;
   min-width: 540px;
@@ -28,7 +34,30 @@ export const Container = styled.div`
     
   }
 `
-export const Books = styled.div`
+
+
+export const Icons = styled.div`
+  margin-left: 160px;
+  width: 200px;
+  margin-top: 20px;
+  svg {
+    color: #fff;
+    transition: color 0.2s;
+    &:hover {
+      color: ${tint(0.2, '#562085')}
+    }
+
+    & + a {
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 940px) {
+    margin-bottom: 200px;
+  }
+`
+
+export const Books = styled.div<BookCardProps>`
 
   display: flex;  
   flex: 1;
@@ -64,10 +93,11 @@ export const Books = styled.div`
     height: 50px; 
     width: 50px;
     margin-top: 150px;
+   
     div {
       position: relative;
       &:nth-child(2) {
-        margin-top: 6200px;
+        margin-top: ${props => ((props.numberOfCards * 710) - 900)}px;
       }
       transform: translateY(300px) translateX(-130px);
     }
@@ -111,26 +141,5 @@ export const Input = styled.div`
     &:hover {
       color: ${tint(0.2, '#562085')}
     }
-  }
-`
-
-export const Icons = styled.div`
-  margin-left: 160px;
-  width: 200px;
-  margin-top: 20px;
-  svg {
-    color: #fff;
-    transition: color 0.2s;
-    &:hover {
-      color: ${tint(0.2, '#562085')}
-    }
-
-    & + a {
-      margin-left: 10px;
-    }
-  }
-
-  @media only screen and (max-width: 940px) {
-    margin-bottom: 200px;
   }
 `
