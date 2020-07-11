@@ -15,6 +15,7 @@ interface BookData {
     publisher?: string;
     authors: string[];
     description: string;
+    infoLink: string;
     imageLinks?: {
       thumbnail: string;
     }
@@ -30,7 +31,12 @@ const Home: React.FC = () => {
   const getBooks = useCallback(async () => {
     try {
       const res = await api.get(`${searchInput}`)
-      setBooksFound(res.data.items)
+
+      setTimeout(() => { 
+          setBooksFound(res.data.items)
+      }, 1000)
+
+      console.log(res.data.items)
 
     } catch (err) { 
       setBooksFound([])
@@ -75,17 +81,15 @@ const Home: React.FC = () => {
       <Books numberOfCards={booksFound?.length}>
         {booksFound?.length ? <div className='vl'/> : null}
         {booksFound?.length
-          ? booksFound.map(book => {
-            // const { volumeInfo } = book;
-            // const { authors, title, publishedDate, imageLinks } = volumeInfo;
-            // const { thumbnail } = imageLinks;
+        ? booksFound.map(book => {
             return <BooksComponent 
                       title={book.volumeInfo.title}
                       authors={book.volumeInfo.authors}
                       publishedDate={book.volumeInfo.publishedDate}
                       thumbnail={book.volumeInfo.imageLinks?.thumbnail}
-                    />  
-                }
+                      infoLink={book.volumeInfo.infoLink}
+                  /> 
+               }
           )
           : <img src={booksImg} alt="books" />}
         </Books>

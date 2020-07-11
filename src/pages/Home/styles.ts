@@ -86,6 +86,10 @@ export const Books = styled.div<BookCardProps>`
     margin-left: 600px;
     transform: translateY(-250px);
   }
+
+  a {
+    text-decoration: none;
+  }
   
 
   @media only screen and (max-width: 940px) {
@@ -93,16 +97,15 @@ export const Books = styled.div<BookCardProps>`
     height: 50px; 
     width: 50px;
     margin-top: 150px;
-   
+    text-align: center;
+    
     div {
       position: relative;
       &:nth-child(2) {
         margin-top: ${props => ((props.numberOfCards * 710) - 900)}px;
       }
-      transform: translateY(300px) translateX(-130px);
+      transform: translateY(250px) translateX(-130px);
     }
-    
-    text-align: center;
 
     img {
       transform: translateY(-10px) translateX(-120px);
