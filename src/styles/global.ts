@@ -8,9 +8,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  html, body {
     -webkit-font-smoothing: antialised;
     background: #320A5C;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    position: relative;
   }
 
   #root {
