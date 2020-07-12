@@ -6,10 +6,12 @@ export const BookCard = styled.div`
   transition: margin-right 0.5s;
 
 
-  &:hover {
-    margin-right: -20px;
-  }
-
+  @media only screen and (min-width: 493px) {
+    box-sizing: border-box;
+    &:hover {
+      margin-right: -20px;
+    }
+  } 
  
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
