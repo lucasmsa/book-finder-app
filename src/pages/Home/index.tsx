@@ -75,7 +75,10 @@ const Home: React.FC = () => {
           onChange={(event) => setSearchInput(event.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && handleButtonClick()}
         />  
-        <a href='/' className='button' onClick={handleButtonClick}>
+        <a href='/' className='button' onClick={(e) => {
+              e.preventDefault()
+              handleButtonClick()
+          }}>
             <FiChevronRight
               size={28.5}
             />
