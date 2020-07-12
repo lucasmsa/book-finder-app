@@ -168,6 +168,12 @@ export const Books = styled.div<BookCardProps>`
     .books {
       transform: translateY(-10px) translateX(-120px);
 
+      @media only screen and (max-width: 940px) and (min-width: 494px){
+        width: 270%;
+        height: 270%;
+        margin-bottom: 160px;
+      }
+
       @media only screen and (max-width: 493px) {
           width: 250%;
           height: 250%;
