@@ -28,7 +28,7 @@ export default createGlobalStyle`
       margin-bottom: 55px;
     }
     @media only screen and (max-width: 940px) and (min-width: 494px){
-      margin-bottom: 150px;
+      margin-bottom: 450px;
     }
   }
 
