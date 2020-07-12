@@ -25,7 +25,7 @@ export default createGlobalStyle`
     margin: 20px auto;
     padding: 40px 10px;
     @media only screen and (max-width: 494px){
-      margin-bottom: 45px;
+      margin-bottom: 5px;
     }
     @media only screen and (max-width: 940px) and (min-width: 494px){
       margin-bottom: 150px;
