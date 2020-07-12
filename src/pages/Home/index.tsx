@@ -60,11 +60,17 @@ const Home: React.FC = () => {
     getBooks()
   }
 
+  const handleTitleClick = () => {
+    setSearchInput('');
+    setLoading(false);
+    setBooksFound([])
+  }
+
 
   return (
       
       <Container>
-        <h1>Book Finder <img src={Search} alt="Magnifying glass"/></h1>
+      <h1 onClick={handleTitleClick}>Book Finder <img src={Search} alt="Magnifying glass"/></h1>
         <p>Find world-class books with ease by searching for their author, title or publisher</p>
         <Input>
         <input

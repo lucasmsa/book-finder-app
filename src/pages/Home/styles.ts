@@ -17,6 +17,7 @@ export const Container = styled.div`
   }
 
   h1 {
+    cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 75px;
