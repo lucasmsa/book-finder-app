@@ -6,9 +6,12 @@ export const Container = styled.div`
   min-width: 414px;
   color: white;
 
-  @media only screen and (max-width: 940px) {
-      margin-top: 30px;
-  }
+  @media only screen and (min-width: 493px) {
+    box-sizing: border-box;
+    &:hover {
+      margin-right: -20px;
+    }
+  } 
   
 
   a {
