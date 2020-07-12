@@ -24,13 +24,20 @@ export const Container = styled.div`
     color: white;
     flex: 1;
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 379px) {
+      font-size: 40px;
+    }
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       font-size: 56.25px;
     }
     img {
       width: 50px;
       height: 50px;
-      @media only screen and (max-width: 493px) {
+      @media only screen and (max-width: 379px) {
+        width: 30px;
+        height: 30px;
+      }
+      @media only screen and (max-width: 493px) and (min-width: 380px){
         width: 37.5px;
         height: 37.5px;
       }
@@ -59,7 +66,14 @@ export const Container = styled.div`
     max-width: 400px;
     color: lightgrey;
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 379px) {
+      max-width: 310px;
+      font-size: 13px;
+      margin-top: 25px;
+      margin-right: 6px;
+    }
+
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       max-width: 350px;
       font-size: 17.5px;
       margin-top: 25px;
@@ -86,7 +100,13 @@ export const Icons = styled.div`
       color: ${tint(0.2, '#562085')}
     }
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 379px) {
+      width: 21px;
+      height: 21px;
+      transform: translateX(-20px)
+    }
+
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       width: 27.5px;
       height: 27.5px;
     }
@@ -175,18 +195,28 @@ export const Books = styled.div<BookCardProps>`
         margin-bottom: 140px;
       }
 
-      @media only screen and (max-width: 493px) {
+      @media only screen and (max-width: 493px) and (min-width: 380px) {
           width: 250%;
           height: 250%;
           margin-right: 60px;
       }
+
+      @media only screen and (max-width: 379px){
+        width: 220%;
+        height: 220%;
+        margin-right: 140px;
+      } 
     }
 
     .loading {
       transform: translateY(-10px) translateX(-120px);
 
-      @media only screen and (max-width: 493px) {
+      @media only screen and (max-width: 493px) and (min-width: 380px) {
         margin-right: 60px;
+      }
+
+      @media only screen and (max-width: 379px) {
+        margin-right: 140px;
       }
     }
   }
@@ -201,7 +231,12 @@ export const Input = styled.div`
   background: white;
   border-radius: 15px;
 
-  @media only screen and (max-width: 493px) {
+  @media only screen and (max-width: 379px) {
+    height: 52.5px;
+    width: 280px;
+  }
+
+  @media only screen and (max-width: 493px) and (min-width: 380px) {
     height: 62.5px;
     width: 350px;
   }
@@ -215,13 +250,22 @@ export const Input = styled.div`
     width: 340px;
     margin-right: 10px;
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 379px){
+      font-size: 14px;
+      height: 40px;
+      width: 240px;
+    }
+
+    @media only screen and (max-width: 493px) and (min-width: 380px){
       height: 50px;
       width: 270px;
     }
 
     &::placeholder {
-      font-size: 17.5px;    
+      font-size: 17.5px;   
+      @media only screen and (max-width: 379px){
+        font-size: 12px;
+      } 
     }
   }
 
@@ -232,6 +276,11 @@ export const Input = styled.div`
 
     &:hover {
       color: ${tint(0.2, '#562085')}
+    }
+
+    @media only screen and (max-width: 379px){
+      position: absolute;
+      transform: translateX(-30px) translateY(5.5px);
     }
   }
 `

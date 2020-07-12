@@ -31,10 +31,17 @@ export const BookCard = styled.div`
   align-content: center;
   margin-bottom: 10px;
 
-  @media only screen and (max-width: 493px) {
+  @media only screen and (max-width: 493px) and (min-width: 380px){
     max-width: 240px;
     max-height: 400px;
     padding-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 379px) {
+    margin-left: 580px;
+    padding-right: 2.5px;
+    padding-left: 2.5px;
+    padding-bottom: 0;
   }
 
   @media only screen and (max-width: 940px) {
@@ -49,6 +56,12 @@ export const BookCard = styled.div`
     transform: translateY(0.01px);
     border: 1px solid white;
 
+    @media only screen and (max-width: 379px) {
+      max-height: 145.6px;
+      max-width: 102.4px;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   h2 {
@@ -59,8 +72,12 @@ export const BookCard = styled.div`
     font-weight: bold;
     color: white;
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       font-size: 21.5px;
+    }
+
+    @media only screen and (max-width: 379px) {
+      font-size: 18.5px;
     }
   }
 
@@ -76,14 +93,20 @@ export const BookCard = styled.div`
         margin-bottom: 10px;
     }
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       font-size: 16px;
+    }
+
+    @media only screen and (max-width: 379px) {
+      font-size: 13px;
+      margin-left: 2.5px;
+      margin-right: 2.5px;
     }
   }
   
   a {
 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       font-size: 17.5px;
     }
     font-size: 20px;
@@ -92,6 +115,10 @@ export const BookCard = styled.div`
     transform: translateY(10px) translateX(-45px);
     svg {
       transform: translateY(3px);
+    }
+
+    @media only screen and (max-width: 379px) {
+      font-size: 14.5px;
     }
     
     transition: color 0.2s;

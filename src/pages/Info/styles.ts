@@ -9,7 +9,6 @@ export const Container = styled.div`
   @media only screen and (max-width: 940px) {
       margin-top: 30px;
   }
-  
 
   a {
     
@@ -37,6 +36,11 @@ export const Container = styled.div`
     font-size: 36px;
     color: white;
     flex: 1;
+
+    @media only screen and (max-width: 379px) {
+      font-size: 26px;
+      max-width: 290px;
+    }
   }
 
   p {
@@ -52,9 +56,16 @@ export const Container = styled.div`
         margin: 10px 15px;
       }  
     } 
-    @media only screen and (max-width: 493px) {
+    @media only screen and (max-width: 493px) and (min-width: 380px) {
       max-width: 350px;
       font-size: 17.5px;
+      margin-top: 25px;
+      margin-right: 4px;
+    }
+
+    @media only screen and (max-width: 379px) {
+      max-width: 300px;
+      font-size: 13.5px;
       margin-top: 25px;
       margin-right: 4px;
     }

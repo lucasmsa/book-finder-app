@@ -24,11 +24,14 @@ export default createGlobalStyle`
     max-width: 960px;
     margin: 20px auto;
     padding: 40px 10px;
-    @media only screen and (max-width: 494px){
-      margin-bottom: 120px;
+    @media only screen and (max-width: 494px) and (min-width: 380px){
+      margin-bottom: 135px;
     }
     @media only screen and (max-width: 940px) and (min-width: 494px){
       margin-bottom: 150px;
+    }
+    @media only screen and (max-width: 379px) {
+      margin-bottom: 200px;
     }
   }
 
