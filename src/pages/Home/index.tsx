@@ -9,7 +9,6 @@ import { AiFillGithub, AiFillInfoCircle } from 'react-icons/ai'
 import api from '../../services/api'
 import BooksComponent from '../../components/Books'
 
-
 interface BookData {
   volumeInfo: {
     title: string;
@@ -76,9 +75,10 @@ const Home: React.FC = () => {
           onKeyPress={(e) => e.key === 'Enter' && handleButtonClick()}
         />  
         <a href='/' className='button' onClick={(e) => {
-              e.preventDefault()
-              handleButtonClick()
-          }}>
+            e.preventDefault()
+            handleButtonClick()
+          }
+        }>
             <FiChevronRight
               size={28.5}
             />
