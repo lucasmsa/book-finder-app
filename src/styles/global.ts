@@ -24,6 +24,9 @@ export default createGlobalStyle`
     max-width: 960px;
     margin: 20px auto;
     padding: 40px 10px;
+    @media only screen and (max-width: 493px) {
+      margin-bottom: 60px;
+    }
   }
 
   button {
