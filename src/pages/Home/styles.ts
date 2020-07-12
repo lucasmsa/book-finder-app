@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { tint } from 'polished'
 
 
 interface BookCardProps {
   numberOfCards: number
+  books: boolean
 }
 
 export const Container = styled.div`
@@ -107,6 +108,11 @@ export const Books = styled.div<BookCardProps>`
   place-content: center;
   align-items: center;
   position: relative;
+
+  @media only screen and (max-width: 493px) {
+    ${props => (props.books && css`margin-bottom: 400px; `)}
+  }
+  
 
   .vl {
     position: absolute;

@@ -96,7 +96,7 @@ const Home: React.FC = () => {
               />
             </a>
         </Icons>
-      <Books numberOfCards={booksFound?.length}>
+      <Books numberOfCards={booksFound?.length} books={!!booksFound?.length}>
         {booksFound?.length ? <div className='vl'/> : null}
         {booksFound?.length
           ? booksFound.map(book => {
