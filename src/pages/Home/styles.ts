@@ -110,7 +110,7 @@ export const Books = styled.div<BookCardProps>`
   position: relative;
 
   @media only screen and (max-width: 493px) {
-    ${props => (props.books && css`margin-bottom: 700px; `)}
+    ${props => (props.books && css`margin-bottom: 500px; `)}
   }
   
 
