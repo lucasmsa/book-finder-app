@@ -109,11 +109,6 @@ export const Books = styled.div<BookCardProps>`
   align-items: center;
   position: relative;
 
-  @media only screen and (max-width: 493px) {
-    ${props => (props.books && css`margin-bottom: 100px; `)}
-  }
-  
-
   .vl {
     position: absolute;
     transform: translateX(80px) translateY(-350px);
