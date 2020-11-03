@@ -1,4 +1,4 @@
-import React, { useState, useCallback, createRef } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Container, Books, Input, Icons, Fixed } from './styles'
 import booksImg from '../../assets/bookshelf.svg'
 import Search from '../../assets/search.svg'
@@ -29,7 +29,6 @@ const Home: React.FC = () => {
   const [searchInput, setSearchInput] = useState('')
   const [booksFound, setBooksFound] = useState<BookData[]>([])
   const [loading, setLoading] = useState(false)
-  const myRef = createRef<HTMLDivElement>()
 
   const getBooks = useCallback(async () => {
     try {
