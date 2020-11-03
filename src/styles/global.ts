@@ -17,6 +17,7 @@ export default createGlobalStyle`
 
   html, body {
     max-width: 100%;
+    max-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -28,7 +29,7 @@ export default createGlobalStyle`
       margin-bottom: 135px;
     }
     @media only screen and (max-width: 940px) and (min-width: 494px){
-      margin-bottom: 150px;
+      margin-bottom: 0;
     }
     @media only screen and (max-width: 379px) {
       margin-bottom: 200px;

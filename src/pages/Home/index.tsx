@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react'
-import { Container, Books, Input, Icons } from './styles'
+import React, { useState, useCallback, createRef } from 'react'
+import { Container, Books, Input, Icons, Fixed } from './styles'
 import booksImg from '../../assets/bookshelf.svg'
 import Search from '../../assets/search.svg'
 import Loading from '../../assets/loading.gif'
@@ -29,6 +29,7 @@ const Home: React.FC = () => {
   const [searchInput, setSearchInput] = useState('')
   const [booksFound, setBooksFound] = useState<BookData[]>([])
   const [loading, setLoading] = useState(false)
+  const myRef = createRef<HTMLDivElement>()
 
   const getBooks = useCallback(async () => {
     try {
@@ -65,11 +66,12 @@ const Home: React.FC = () => {
     setLoading(false);
     setBooksFound([])
   }
-
-
+  
   return (
+
       
-      <Container>
+    <Container>
+      <Fixed>
       <h1 onClick={handleTitleClick}>Book Finder <img src={Search} alt="Magnifying glass"/></h1>
         <p>Find world-class books with ease by searching for their author, title or publisher</p>
         <Input>
@@ -102,6 +104,7 @@ const Home: React.FC = () => {
               />
             </a>
         </Icons>
+      </Fixed>
       <Books numberOfCards={booksFound?.length} books={!!booksFound?.length}>
         {booksFound?.length ? <div className='vl'/> : null}
         {booksFound?.length

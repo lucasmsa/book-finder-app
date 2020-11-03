@@ -23,6 +23,7 @@ export const Container = styled.div`
     font-size: 75px;
     color: white;
     flex: 1;
+    position: static;
 
     @media only screen and (max-width: 379px) {
       font-size: 40px;
@@ -82,6 +83,9 @@ export const Container = styled.div`
   }
 `
 
+export const Fixed = styled.div`
+`
+
 
 export const Icons = styled.div`
   margin-left: 160px;
@@ -130,6 +134,7 @@ export const Books = styled.div<BookCardProps>`
   align-items: center;
   position: relative;
 
+
   .vl {
     position: absolute;
     transform: translateX(80px) translateY(-350px);
@@ -150,6 +155,7 @@ export const Books = styled.div<BookCardProps>`
     margin-left: 600px;
     transform: translateY(-250px);
   }
+
 
   .loading {
     margin-left: 600px;
